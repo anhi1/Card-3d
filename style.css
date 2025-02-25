@@ -10,7 +10,7 @@
   
 
 body{
-  background: #ffffff;
+  background: #dfdfdf;
   width: 100%;
   height: 100vh;
   overflow-x:hidden;
@@ -47,6 +47,8 @@ img{
   width: 300px;
   height: 300px;
   perspective: 2000px;
+  outline: none;
+  
 }
 .card-rotating-inner {
   position: relative;
@@ -65,14 +67,27 @@ img{
   box-shadow: 20px 20px 20px #dfe4e7f0,
   -20px -20px 60px #edf3f3;
 }
-.card-rotating-front{
-   /* background-color:rgba(255,255,255,0.1);
-  backdrop-filter:blur(12px);
-  border-left:1px solid rgba(255, 255, 255, 0.207);
-  border-top:1px solid rgba(255, 255, 255, 0.26);
-  border-right:1px solid rgba(255, 255, 255, 0);
-  border-bottom:1px solid rgba(255, 255, 255, 0);  */
+.card-rotating-front {
+  background-color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
+ /* Efecto visual de hover y focus en la parte front */
+  .card-rotating-front:hover{
+   background-color: var(--secondary-color);
+   cursor: pointer;
+   transform: scale(1.05);
+   transform: rotateZ(1.7deg);
+ }
+
+  .card-rotating:focus .card-rotating-front{
+   box-shadow: 0 0 1px 8px rgba(255, 255, 255, 0.573);
+ }
+
+ 
+ .card-rotating-front:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+ 
 .card-rotating-back {
   font-size: 1.25rem;
   text-align: center;
@@ -80,12 +95,15 @@ img{
   place-items: center;
   padding: 32px;
   transform: rotateY(180deg);
+  background-color: white;
 
 }
-.card-rotating:hover .card-rotating-inner {
+
+
+/* Clase agregada para el volteo */
+.card-rotating-inner.is-flipped {
   transform: rotateY(-180deg);
 }
-
 
 .btn-primary {
   border:none;
