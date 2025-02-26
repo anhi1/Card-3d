@@ -7,34 +7,33 @@
 *{
     box-sizing: border-box;
 }
-  
 
-body{
+body {
   background: #dfdfdf;
   width: 100%;
   height: 100vh;
-  overflow-x:hidden;
-  font-family:  "Montserrat", serif;
+  overflow-x: hidden;
+  font-family: "Montserrat", serif;
 }
 
-.container{
- margin-top:50px;
-height: 100vh;
+.container {
+  margin-top: 50px;
+  height: auto; /* Ajusta la altura según sea necesario */
 }
 
-
-.img-container{
+.img-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-img{
-  max-width:60%; 
+
+img {
+  max-width: 60%;
 }
 
 .cards-grid {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   grid-gap: 80px;
@@ -43,13 +42,12 @@ img{
 
 /* FLIP CARD */
 .card-rotating {
-  
   width: 300px;
   height: 300px;
   perspective: 2000px;
   outline: none;
-  
 }
+
 .card-rotating-inner {
   position: relative;
   width: 100%;
@@ -58,36 +56,38 @@ img{
   transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
   transform-style: preserve-3d;
 }
-.card-rotating-front, .card-rotating-back {
+
+.card-rotating-front,
+.card-rotating-back {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 28px;
   backface-visibility: hidden;
-  box-shadow: 20px 20px 20px #dfe4e7f0,
-  -20px -20px 60px #edf3f3;
+  box-shadow: 20px 20px 20px #dfe4e7f0, -20px -20px 60px #edf3f3;
 }
+
 .card-rotating-front {
   background-color: white;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
- /* Efecto visual de hover y focus en la parte front */
-  .card-rotating-front:hover{
-   background-color: var(--secondary-color);
-   cursor: pointer;
-   transform: scale(1.05);
-   transform: rotateZ(1.7deg);
- }
 
-  .card-rotating:focus .card-rotating-front{
-   box-shadow: 0 0 1px 8px rgba(255, 255, 255, 0.573);
- }
+/* Efecto visual de hover y focus en la parte front */
+.card-rotating-front:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  transform: scale(1.05);
+  transform: rotateZ(1.7deg);
+}
 
- 
- .card-rotating-front:active {
+/* .card-rotating:focus .card-rotating-front {
+  box-shadow: 0 0 2px 8px rgb(255, 255, 255);
+} */
+
+.card-rotating-front:active {
   transform: scale(0.95) rotateZ(1.7deg);
 }
- 
+
 .card-rotating-back {
   font-size: 1.25rem;
   text-align: center;
@@ -96,9 +96,7 @@ img{
   padding: 32px;
   transform: rotateY(180deg);
   background-color: white;
-
 }
-
 
 /* Clase agregada para el volteo */
 .card-rotating-inner.is-flipped {
@@ -106,7 +104,7 @@ img{
 }
 
 .btn-primary {
-  border:none;
+  border: none;
   margin: 10px;
   font-size: 1rem;
   width: 100px;
@@ -117,66 +115,53 @@ img{
   outline: none;
   border-radius: 4px;
   box-shadow: 0 0 1px 2px var(--secondary-color);
-  transition: all 0.35s ease-in-out;
+  transition: all 0.4s ease-in-out;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
-  font-weight: 600; 
+  font-weight: 600;
 }
+
 .btn-primary:hover {
-  background-color:  var(--primary-color);
+  background-color: var(--primary-color);
   box-shadow: 0 0 1px 2px var(--primary-color);
   color: #fff;
   font-size: 1rem;
-  font-weight: 600; 
+  font-weight: 600;
 }
-
 
 .btn-primary:focus {
   box-shadow: 0 0 1px 5px rgba(8, 124, 212, 0.307), 0 0 0 1px rgba(21, 69, 210, 0.862);
   background-color: #ffffff;
-  color:  var(--primary-color);
+  color: var(--primary-color);
   font-size: 1rem;
   font-weight: 600;
-  
 }
 
-
-
-/* .barra-container {
-  width: 300px;
-  height: 20px;
-  background-color: #eee;
-  border-radius: 10px;
-  margin: 10px 0;
-  overflow: hidden;
+.container-progress {
+  width: 80%; /* Ajusta el ancho según sea necesario */
+  max-width: 600px; /* Ancho máximo para las barras */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Ajusta el padding según sea necesario */
 }
-.barra {
-  height: 100%;
-  width: 0%; 
-  background-color: #49a6fe;
-  transition: width 0.3s;
-} */
 
-
-
-/* Nueva lineas */
 .progress-line {
   display: flex;
   align-items: center;
   margin: 10px 0;
+  width: 100%; /* Asegúrate de que el contenedor tenga un ancho del 100% */
 }
 
 .progress-text-left,
 .progress-text-right {
-  width: 80px;              /* Ajusta el ancho según tu diseño */
+  width: 80px; /* Ajusta el ancho según tu diseño */
   text-align: center;
   font-size: 0.9rem;
 }
 
 .barra-container {
   flex: 1;
-  height: 10px;            /* Altura de la barra */
-  background: #eee;        /* Color de fondo */
+  height: 10px; /* Altura de la barra */
+  background: #eee; /* Color de fondo */
   border-radius: 5px;
   margin: 0 10px;
   position: relative;
@@ -185,8 +170,13 @@ img{
 
 .barra {
   height: 100%;
-  width: 0%;               /* Inicia en 0% */
-  background: #49a6fe;     /* Color de la barra */
+  width: 0%; /* Inicia en 0% */
+  background: #49a6fe; /* Color de la barra */
   border-radius: 5px;
   transition: width 0.3s ease;
+}
+
+/* Los valores numéricos se ocultan visualmente */
+#velocidadValor, #pesoValor, #esperanzaValor {
+  visibility: hidden;
 }

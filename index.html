@@ -7,11 +7,12 @@
     <title>card</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script src="script/datos.js"></script>
-<script src="script/card.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script/datos.js"></script>
+    <script src="script/card.js"></script>
 
 
 </head>
@@ -27,7 +28,7 @@
                         </div>
                     </div>
                     <div class="card-rotating-back">
-                        <button class="btn-primary btn-info" data-animal="manta">ver datos</button>                        
+                        <button class="btn-primary btn-info" data-animal="manta">ver datos</button>
                     </div>
                 </div>
             </div>
@@ -44,7 +45,7 @@
                 </div>
             </div>
 
-            
+
 
             <div class="card-rotating" tabindex="0" id="cardTortuga">
                 <div class="card-rotating-inner">
@@ -61,39 +62,40 @@
         </div>
     </div>
 
-  <!-- Contenedor para el resumen 
-  <div class="resumen-container">
- <h2>Resumen</h2>
-    <p>Velocidad: <span id="velocidadValor">0</span> km/h</p>
-    <p>Peso/Tamaño: <span id="pesoValor">0</span></p>
-    <p>Esperanza de vida: <span id="esperanzaValor">0</span> años</p> 
-  </div>
--->
-  
-  <!-- Barras de progreso (3 líneas) -->
-  <div class="progress-line">
-    <span class="progress-text-left" id="valorVelocidadMin">0 km/h</span>
-    <div class="barra-container">
-      <div class="barra" id="barraVelocidad"></div>
-    </div>
-    <span class="progress-text-right" id="valorVelocidadMax">50 km/h</span>
-  </div>
 
-  <div class="progress-line">
-    <span class="progress-text-left" id="valorPesoMin">0 kg</span>
-    <div class="barra-container">
-      <div class="barra" id="barraPeso"></div>
-    </div>
-    <span class="progress-text-right" id="valorPesoMax">2000 kg</span>
-  </div>
 
-  <div class="progress-line">
-    <span class="progress-text-left" id="valorEsperanzaMin">0 años</span>
-    <div class="barra-container">
-      <div class="barra" id="barraEsperanza"></div>
+    <!-- Barras de progreso (3 líneas) -->
+    <div class="container-progress">
+        <div class="progress-line">
+            <p>Velocidad</p>
+            <span class="progress-text-left" id="valorVelocidadMin">0 km/h</span>
+            <div class="barra-container">
+                <div class="barra" id="barraVelocidad"></div>
+            </div>
+            <span class="progress-text-right" id="valorVelocidadMax">100 km/h</span>
+            <span id="velocidadValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
+        </div>
+
+        <div class="progress-line">
+            <p>Peso/tamaño</p>
+            <span class="progress-text-left" id="valorPesoMin">100 kg</span>
+            <div class="barra-container">
+                <div class="barra" id="barraPeso"></div>
+            </div>
+            <span class="progress-text-right" id="valorPesoMax">1000 kg</span>
+            <span id="pesoValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
+        </div>
+
+        <div class="progress-line">
+            <p>Esperanza de vida</p>
+            <span class="progress-text-left" id="valorEsperanzaMin">0 años</span>
+            <div class="barra-container">
+                <div class="barra" id="barraEsperanza"></div>
+            </div>
+            <span class="progress-text-right" id="valorEsperanzaMax">100 años</span>
+            <span id="esperanzaValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
+        </div>
     </div>
-    <span class="progress-text-right" id="valorEsperanzaMax">100 años</span>
-  </div>
 </body>
 
 </html>
