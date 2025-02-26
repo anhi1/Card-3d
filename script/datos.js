@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         targets: '#barraPeso',
         width: `${(data.peso / maximos.peso) * 100}%`,
         easing: "easeInOutQuad",
-        duration: 150
+        duration: 100
       }, 0)
       .add({
         targets: '#barraEsperanza',
