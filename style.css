@@ -139,3 +139,54 @@ img{
   font-weight: 600;
   
 }
+
+
+
+/* .barra-container {
+  width: 300px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.barra {
+  height: 100%;
+  width: 0%; 
+  background-color: #49a6fe;
+  transition: width 0.3s;
+} */
+
+
+
+/* Nueva lineas */
+.progress-line {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.progress-text-left,
+.progress-text-right {
+  width: 80px;              /* Ajusta el ancho según tu diseño */
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.barra-container {
+  flex: 1;
+  height: 10px;            /* Altura de la barra */
+  background: #eee;        /* Color de fondo */
+  border-radius: 5px;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.barra {
+  height: 100%;
+  width: 0%;               /* Inicia en 0% */
+  background: #49a6fe;     /* Color de la barra */
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
