@@ -1,93 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Datos de los animales
   const datosAnimales = {
     manta: { velocidad: 70, peso: 500, esperanza: 40 },
     pezGlobo: { velocidad: 30, peso: 200, esperanza: 30 },
     tortuga: { velocidad: 40, peso: 800, esperanza: 80 }
   };
 
-  // Máximos para las animaciones de barras (valor máximo para cada propiedad)
   const maximos = {
-    velocidad: 100, // Máximo de velocidad en km/h
-    peso: 1000,     // Máximo de peso en kg
-    esperanza: 100  // Máximo de esperanza de vida en años
+    velocidad: 100,
+    peso: 1000,
+    esperanza: 100
   };
 
-  // 1) Función para animar los valores de texto
   function animarValores(nuevosValores) {
     anime({
-      targets: '#velocidadValor',
-      innerHTML: [
-        parseInt(document.getElementById('velocidadValor').innerHTML) || 0, // Valor inicial
-        nuevosValores.velocidad
-      ],
+      targets: ['#velocidadValor', '#pesoValor', '#esperanzaValor'],
+      innerHTML: function (el) {
+        let key = el.id.replace('Valor', '');
+        return [parseInt(el.innerHTML) || 0, nuevosValores[key]];
+      },
       round: 1,
       easing: 'easeInOutQuad',
-      duration: 1000
-    });
-
-    anime({
-      targets: '#pesoValor',
-      innerHTML: [
-        parseInt(document.getElementById('pesoValor').innerHTML) || 0, // Valor inicial
-        nuevosValores.peso
-      ],
-      round: 1,
-      easing: 'easeInOutQuad',
-      duration: 1000
-    });
-
-    anime({
-      targets: '#esperanzaValor',
-      innerHTML: [
-        parseInt(document.getElementById('esperanzaValor').innerHTML) || 0, // Valor inicial
-        nuevosValores.esperanza
-      ],
-      round: 1,
-      easing: 'easeInOutQuad',
-      duration: 1000
+      duration: 800
     });
   }
 
-  // 2) Función genérica para animar una barra con tiempos diferentes
-  function animarBarra(idBarra, valorActual, valorMaximo, tiempo) {
-    const porcentaje = (valorActual / valorMaximo) * 100;  // Cálculo del porcentaje
-
-    // Animamos el ancho de la barra desde 0% hasta el porcentaje calculado
-    anime({
-      targets: `#${idBarra}`,
-      width: [`0%`, `${porcentaje}%`],
-      easing: "easeInOutQuad",
-      duration: tiempo
-    });
+  function animarBarras(data) {
+    anime.timeline()
+      .add({
+        targets: '#barraVelocidad',
+        width: `${(data.velocidad / maximos.velocidad) * 100}%`,
+        easing: "easeInOutQuad",
+        duration: 100
+      }, 0)
+      .add({
+        targets: '#barraPeso',
+        width: `${(data.peso / maximos.peso) * 100}%`,
+        easing: "easeInOutQuad",
+        duration: 150
+      }, 0)
+      .add({
+        targets: '#barraEsperanza',
+        width: `${(data.esperanza / maximos.esperanza) * 100}%`,
+        easing: "easeInOutQuad",
+        duration: 100
+      }, 0);
   }
 
-  // 3) Función que maneja la actualización de las barras y los valores
   function actualizarBarrasYValores(data) {
-    // 1. Animar la barra de velocidad (máximo 100 km/h)
-    animarBarra('barraVelocidad', data.velocidad, maximos.velocidad, 150);  
-    document.getElementById('valorVelocidadMin').textContent = data.velocidad + ' km/h';
-    document.getElementById('valorVelocidadMax').textContent = maximos.velocidad + ' km/h'; 
+    document.getElementById('valorVelocidadMin').textContent = `${data.velocidad} km/h`;
+    document.getElementById('valorPesoMin').textContent = `${data.peso} kg`;
+    document.getElementById('valorEsperanzaMin').textContent = `${data.esperanza} años`;
 
-    // 2. Animar la barra de peso (máximo 1000 kg)
-    animarBarra('barraPeso', data.peso, maximos.peso, 100);
-    document.getElementById('valorPesoMin').textContent = data.peso + ' kg';
-    document.getElementById('valorPesoMax').textContent = maximos.peso + ' kg'; 
-
-    // 3. Animar la barra de esperanza de vida (máximo 100 años)
-    animarBarra('barraEsperanza', data.esperanza, maximos.esperanza,150);
-    document.getElementById('valorEsperanzaMin').textContent = data.esperanza + ' años';
-    document.getElementById('valorEsperanzaMax').textContent = maximos.esperanza + ' años';  
+    animarBarras(data);
   }
 
-  // 4) Función que se llama desde card.js al hacer clic
   function animarYActualizarDatos(animalKey) {
     const data = datosAnimales[animalKey];
-
-    animarValores(data); // Animar los valores numéricos
-    actualizarBarrasYValores(data); // Actualizar las barras y valores
+    animarValores(data);
+    actualizarBarrasYValores(data);
   }
 
-  // Exportar la función para que se pueda usar en card.js
-  window.animarYActualizarDatos = animarYActualizarDatos; // Función global
+  window.animarYActualizarDatos = animarYActualizarDatos;
 });

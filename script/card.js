@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Obtener el animal desde el atributo 'data-animal' del botón
       const animalKey = btnInfo.getAttribute('data-animal');
 
-      // Llamar a la función de datos.js para animar y actualizar los valores
+      // Llamar a la función para animar y actualizar datos
       animarYActualizarDatos(animalKey);
     });
 
@@ -29,3 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Función que se llama desde card.js al hacer clic
+function animarYActualizarDatos(animalKey) {
+  const data = datosAnimales[animalKey];
+
+  animarValores(data); // Animar los valores numéricos
+  actualizarBarrasYValores(data); // Actualizar las barras y valores
+}
+
+// Exportar la función para que se pueda usar en card.js
+window.animarYActualizarDatos = animarYActualizarDatos; // Función global

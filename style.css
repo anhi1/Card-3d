@@ -80,9 +80,6 @@ img {
   transform: rotateZ(1.7deg);
 }
 
-/* .card-rotating:focus .card-rotating-front {
-  box-shadow: 0 0 2px 8px rgb(255, 255, 255);
-} */
 
 .card-rotating-front:active {
   transform: scale(0.95) rotateZ(1.7deg);
