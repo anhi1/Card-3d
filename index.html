@@ -67,18 +67,23 @@
     <!-- Barras de progreso (3 líneas) -->
     <div class="container-progress">
         <div class="progress-line">
-            <p>Velocidad</p>
-            <span class="progress-text-left" id="valorVelocidadMin">0 km/h</span>
-            <div class="barra-container">
-                <div class="barra" id="barraVelocidad"></div>
+            <div class="titulo">
+                <h4>Velocidad</h4>
             </div>
-            <span class="progress-text-right" id="valorVelocidadMax">100 km/h</span>
-            <span id="velocidadValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
+            <div class="progress-number">
+                <span class="progress-text-left" id="valorVelocidadMin">0 km/h</span>
+                <div class="barra-container">
+                    <div class="barra" id="barraVelocidad"></div>
+                </div>
+                <span class="progress-text-right" id="valorVelocidadMax">100 km/h</span>
+                <span id="velocidadValor" style="display:none;"></span>
+                <!-- Añadido para que no interfiera visualmente -->
+            </div>
         </div>
 
         <div class="progress-line">
-            <p>Peso/tamaño</p>
-            <span class="progress-text-left" id="valorPesoMin">100 kg</span>
+            <h4>Peso</h4>
+            <span class="progress-text-left" id="valorPesoMin">0 kg</span>
             <div class="barra-container">
                 <div class="barra" id="barraPeso"></div>
             </div>
@@ -87,7 +92,7 @@
         </div>
 
         <div class="progress-line">
-            <p>Esperanza de vida</p>
+            <h4>E. Vida</h4>
             <span class="progress-text-left" id="valorEsperanzaMin">0 años</span>
             <div class="barra-container">
                 <div class="barra" id="barraEsperanza"></div>

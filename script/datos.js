@@ -30,19 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
         targets: '#barraVelocidad',
         width: `${(data.velocidad / maximos.velocidad) * 100}%`,
         easing: "easeInOutQuad",
-        duration: 100
+        duration: 95
       }, 0)
       .add({
         targets: '#barraPeso',
         width: `${(data.peso / maximos.peso) * 100}%`,
         easing: "easeInOutQuad",
-        duration: 100
+        duration: 95
       }, 0)
       .add({
         targets: '#barraEsperanza',
         width: `${(data.esperanza / maximos.esperanza) * 100}%`,
         easing: "easeInOutQuad",
-        duration: 100
+        duration: 95
       }, 0);
   }
 

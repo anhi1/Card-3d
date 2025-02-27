@@ -29,7 +29,7 @@ body {
 }
 
 img {
-  max-width: 60%;
+  max-width: 70%;
 }
 
 .cards-grid {
@@ -37,13 +37,13 @@ img {
   justify-content: center;
   align-items: center;
   grid-gap: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
 /* FLIP CARD */
 .card-rotating {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   perspective: 2000px;
   outline: none;
 }
@@ -110,7 +110,7 @@ img {
   color: #ffffff;
   outline: none;
   border-radius: 4px;
-  transition: background-color 0.15s ease-in, transform 0.2s ease-in; /* Reducir transiciones */
+  transition: background-color 0.18s ease-in, transform 0.3s ease-in; /* Reducir transiciones */
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   font-weight: 600;
@@ -138,23 +138,28 @@ img {
 
 .container-progress {
   width: 80%; /* Ajusta el ancho según sea necesario */
-  max-width: 600px; /* Ancho máximo para las barras */
+  max-width: 800px; /* Ancho máximo para las barras */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   padding: 20px; /* Ajusta el padding según sea necesario */
+  background-color: #ffffff;
 }
 
 .progress-line {
-  display: flex;
+  display: block;
   align-items: center;
   margin: 10px 0;
   width: 100%; /* Asegúrate de que el contenedor tenga un ancho del 100% */
+  
 }
 
-.progress-text-left,
-.progress-text-right {
-  width: 80px; /* Ajusta el ancho según tu diseño */
+.progress-text-left {
+  width: 70px; /* Ajusta el ancho según tu diseño */
   text-align: center;
   font-size: 0.9rem;
+}
+
+.progress-text-left{
+  
 }
 
 .barra-container {
@@ -165,6 +170,7 @@ img {
   margin: 0 10px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .barra {
@@ -179,3 +185,4 @@ img {
 #velocidadValor, #pesoValor, #esperanzaValor {
   visibility: hidden;
 }
+
