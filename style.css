@@ -29,7 +29,7 @@ body {
 }
 
 img {
-  max-width: 70%;
+  max-width: 80%;
 }
 
 .cards-grid {
@@ -42,8 +42,8 @@ img {
 
 /* FLIP CARD */
 .card-rotating {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   perspective: 2000px;
   outline: none;
 }
@@ -79,13 +79,12 @@ img {
   transform: scale(1.05) rotateZ(1.7deg); /* Combine las transformaciones */
 }
 
-
 .card-rotating-front:active {
   transform: scale(0.95) rotateZ(1.7deg);
 }
 
 .card-rotating-back {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-align: center;
   display: grid;
   place-items: center;
@@ -94,7 +93,7 @@ img {
   background-color: white;
 }
 
-/* Clase agregada para el volteo */
+
 .card-rotating-inner.is-flipped {
   transform: rotateY(-180deg);
 }
@@ -137,7 +136,7 @@ img {
 
 
 .container-progress {
-  width: 80%; /* Ajusta el ancho según sea necesario */
+  width: 50%; /* Ajusta el ancho según sea necesario */
   max-width: 800px; /* Ancho máximo para las barras */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   padding: 20px; /* Ajusta el padding según sea necesario */
