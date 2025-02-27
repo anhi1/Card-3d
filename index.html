@@ -13,11 +13,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="script/datos.js"></script>
     <script src="script/card.js"></script>
+    <title>Animales</title>
 
 
 </head>
 
 <body>
+
+    <!-- Animales -->
     <div class="container">
         <div class="cards-grid">
             <div class="card-rotating" tabindex="0" id="cardManta">
@@ -39,6 +42,7 @@
                         <div class="img-container">
                             <img src="img/pezglobo.png" alt="pezglobo">
                         </div>
+                        
                     </div>
                     <div class="card-rotating-back">
                         <p>Inflan su cuerpo para defenderse.</p>
@@ -62,10 +66,11 @@
         </div>
     </div>
 
-
+    
 
     <!-- Barras de progreso (3 líneas) -->
     <div class="container-progress">
+        <span class="animal-name"></span>
         <div class="progress-line">
             <h4 class="progress-title">Velocidad</h4>
             <div class="progress-number">
@@ -74,8 +79,6 @@
                     <div class="barra" id="barraVelocidad"></div>
                 </div>
                 <span class="progress-text-right" id="valorVelocidadMax">100 km/h</span>
-                <span id="velocidadValor" style="display:none;"></span>
-                <!-- Añadido para que no interfiera visualmente -->
             </div>
         </div>
 
@@ -87,23 +90,21 @@
                     <div class="barra" id="barraPeso"></div>
                 </div>
                 <span class="progress-text-right" id="valorPesoMax">1000 kg</span>
-                <span id="pesoValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
             </div>
         </div>
-    
 
-    <div class="progress-line">
-        <h4 class="progress-title">E. Vida</h4>
-        <div class="progress-number">
-            <span class="progress-text-left" id="valorEsperanzaMin">0 años</span>
-            <div class="barra-container">
-                <div class="barra" id="barraEsperanza"></div>
+
+        <div class="progress-line">
+            <h4 class="progress-title">E. Vida</h4>
+            <div class="progress-number">
+                <span class="progress-text-left" id="valorEsperanzaMin">0 años</span>
+                <div class="barra-container">
+                    <div class="barra" id="barraEsperanza"></div>
+                </div>
+                <span class="progress-text-right" id="valorEsperanzaMax">100 años</span>
             </div>
-            <span class="progress-text-right" id="valorEsperanzaMax">100 años</span>
-            <span id="esperanzaValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
         </div>
-    </div>
-    
+
 </body>
 
 </html>

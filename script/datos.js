@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const datosAnimales = {
-    manta: { velocidad: 70, peso: 500, esperanza: 40 },
-    pezGlobo: { velocidad: 30, peso: 200, esperanza: 30 },
-    tortuga: { velocidad: 40, peso: 800, esperanza: 80 }
+    manta: { nombre: "Mantaraya", velocidad: 70, peso: 500, esperanza: 40 },
+    pezGlobo: {  nombre: "Pez Globo", velocidad: 30, peso: 200, esperanza: 30 },
+    tortuga: { nombre: "Tortuga", velocidad: 40, peso: 800, esperanza: 80 }
   };
 
   const maximos = {
@@ -10,19 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     peso: 1000,
     esperanza: 100
   };
-
-  function animarValores(nuevosValores) {
-    anime({
-      targets: ['#velocidadValor', '#pesoValor', '#esperanzaValor'],
-      innerHTML: function (el) {
-        let key = el.id.replace('Valor', '');
-        return [parseInt(el.innerHTML) || 0, nuevosValores[key]];
-      },
-      round: 1,
-      easing: 'easeInOutQuad',
-      duration: 800
-    });
-  }
 
   function animarBarras(data) {
     anime.timeline()
@@ -46,18 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 0);
   }
 
-  function actualizarBarrasYValores(data) {
+  function actualizarBarras(data) {
     document.getElementById('valorVelocidadMin').textContent = `${data.velocidad} km/h`;
     document.getElementById('valorPesoMin').textContent = `${data.peso} kg`;
     document.getElementById('valorEsperanzaMin').textContent = `${data.esperanza} años`;
 
     animarBarras(data);
+    document.querySelector('.animal-name').textContent = data.nombre;
   }
 
   function animarYActualizarDatos(animalKey) {
     const data = datosAnimales[animalKey];
-    animarValores(data);
-    actualizarBarrasYValores(data);
+    actualizarBarras(data);
   }
 
   window.animarYActualizarDatos = animarYActualizarDatos;
