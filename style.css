@@ -64,19 +64,21 @@ img {
   height: 100%;
   border-radius: 28px;
   backface-visibility: hidden;
+  /* will-change: transform; */
   
 }
 
 .card-rotating-front {
   background-color: white;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  will-change: transform, background-color; /* Ayuda a evitar el parpadeo */
 }
 
 /* Efecto visual de hover y focus en la parte front */
 .card-rotating-front:hover {
   background-color: var(--secondary-color);
   cursor: pointer;
-  transform: scale(1.05) rotateZ(1.7deg); /* Combine las transformaciones */
+  transform: scale(1.05) rotateZ(1.7deg)/* Combine las transformaciones */
 }
 
 .card-rotating-front:active {
@@ -109,7 +111,7 @@ img {
   color: #ffffff;
   outline: none;
   border-radius: 4px;
-  transition: background-color 0.18s ease-in, transform 0.3s ease-in; /* Reducir transiciones */
+  transition:  transform 0.3s ease-in-out; /* Reducir transiciones */
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   font-weight: 600;
