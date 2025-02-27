@@ -145,23 +145,34 @@ img {
 }
 
 .progress-line {
-  display: block;
+  display: flex;
+  flex-direction: column; /* Hace que el título esté arriba y la barra debajo */
   align-items: center;
-  margin: 10px 0;
-  width: 100%; /* Asegúrate de que el contenedor tenga un ancho del 100% */
-  
+  width: 100%;
+  margin-bottom: 15px; /* Espaciado entre las barras */
 }
 
-.progress-text-left {
-  width: 70px; /* Ajusta el ancho según tu diseño */
+.progress-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px; /* Espaciado entre el título y la barra */
   text-align: center;
+}
+.progress-number {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.progress-text-left,
+.progress-text-right {
+  min-width: 50px;
   font-size: 0.9rem;
 }
 
-.progress-text-left{
-  
+.progress-text-right {
+  text-align: right; /* Asegura que el número "100" esté alineado a la derecha */
 }
-
 .barra-container {
   flex: 1;
   height: 10px; /* Altura de la barra */

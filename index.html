@@ -67,9 +67,7 @@
     <!-- Barras de progreso (3 líneas) -->
     <div class="container-progress">
         <div class="progress-line">
-            <div class="titulo">
-                <h4>Velocidad</h4>
-            </div>
+            <h4 class="progress-title">Velocidad</h4>
             <div class="progress-number">
                 <span class="progress-text-left" id="valorVelocidadMin">0 km/h</span>
                 <div class="barra-container">
@@ -82,17 +80,21 @@
         </div>
 
         <div class="progress-line">
-            <h4>Peso</h4>
-            <span class="progress-text-left" id="valorPesoMin">0 kg</span>
-            <div class="barra-container">
-                <div class="barra" id="barraPeso"></div>
+            <h4 class="progress-title">Peso</h4>
+            <div class="progress-number">
+                <span class="progress-text-left" id="valorPesoMin">0 kg</span>
+                <div class="barra-container">
+                    <div class="barra" id="barraPeso"></div>
+                </div>
+                <span class="progress-text-right" id="valorPesoMax">1000 kg</span>
+                <span id="pesoValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
             </div>
-            <span class="progress-text-right" id="valorPesoMax">1000 kg</span>
-            <span id="pesoValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
         </div>
+    
 
-        <div class="progress-line">
-            <h4>E. Vida</h4>
+    <div class="progress-line">
+        <h4 class="progress-title">E. Vida</h4>
+        <div class="progress-number">
             <span class="progress-text-left" id="valorEsperanzaMin">0 años</span>
             <div class="barra-container">
                 <div class="barra" id="barraEsperanza"></div>
@@ -101,6 +103,7 @@
             <span id="esperanzaValor" style="display:none;"></span> <!-- Añadido para que no interfiera visualmente -->
         </div>
     </div>
+    
 </body>
 
 </html>
