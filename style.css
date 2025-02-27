@@ -143,6 +143,7 @@ img {
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   padding: 20px; /* Ajusta el padding según sea necesario */
   background-color: #ffffff;
+  border-radius: 28px;
 }
 
 .progress-line {
@@ -154,10 +155,10 @@ img {
 }
 
 .progress-title {
-  font-size: 1rem;
+  
   font-weight: 600;
   margin-bottom: 5px; /* Espaciado entre el título y la barra */
-  text-align: center;
+
 }
 .progress-number {
   display: flex;
@@ -167,13 +168,11 @@ img {
 }
 .progress-text-left,
 .progress-text-right {
-  min-width: 50px;
+  min-width: 70px;
   font-size: 0.9rem;
-}
+} 
 
-.progress-text-right {
-  text-align: right; /* Asegura que el número "100" esté alineado a la derecha */
-}
+
 .barra-container {
   flex: 1;
   height: 10px; /* Altura de la barra */
@@ -182,7 +181,7 @@ img {
   margin: 0 10px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  box-shadow: 0 2px 5px rgba(12, 73, 217, 0.31); /* Sombra suave */
 }
 
 .barra {
