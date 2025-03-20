@@ -1,18 +1,13 @@
 
 
-Actividad: Timeline, librerías y frameworks
+Actividad: Timeline, Librerías y Frameworks
 
-Se utilizó anime.js | css | html
+Se utilizó Anime.js, CSS y HTML para desarrollar la animación de una serie de tarjetas interactivas. Para visualizar las tarjetas, es necesario abrir el archivo index.html.
 
-Para visualizar las cards, abrirlo desde index.html
-EL objetivo de esta actividad fue calcular los tiempos de las cards, las barras de progreso, mostrar el reverso de la card e implementar los principios de animación. Primero se visualiza la imagen de cada animal, el usuario al pasar por la imagen hace el efecto hover y al darle click, este se activa aumentando el tamaño y cambio de color de manera fluida, seguidamente se muestra la parte reversa de la card, donde se nota una descripción y un botón, el usuario hace click al botón y aparece la animación de los valores. El objetivo es calcular los tiempos cuando el botón termina de ser pulsado y a la vez muestra las barras.
+El objetivo principal de esta actividad fue calcular los tiempos de animación de las tarjetas, coordinar las barras de progreso, mostrar el reverso de cada tarjeta e implementar principios de animación. En primer lugar, se presenta la imagen de cada animal. Al pasar el cursor sobre la imagen, se activa un efecto hover, y al hacer clic, la tarjeta aumenta de tamaño y cambia de color de manera fluida. Posteriormente, se muestra el reverso de la tarjeta, donde se encuentra una descripción y un botón interactivo. Al hacer clic en este botón, se activa una animación que muestra los valores y las barras de progreso.
 
-En un principio se notó que había un cambio brusco al hacer hover en las cards, pero agregando el will-change se pudo evitar el parpadeo en la imágenes.
+Para garantizar la sincronización adecuada, se calcularon los tiempos de cada animación, asegurando que la aparición de las barras coincidiera con el final de la acción del botón.
 
-Se aplicaron correctamente los principios y las animaciones 3d.
+Inicialmente, se observó un cambio brusco en el efecto hover de las tarjetas. Sin embargo, al incorporar la propiedad will-change, se logró evitar el parpadeo en las imágenes, mejorando la fluidez de la animación.
 
-En las barras de progreso se ubicaron los mismos tiempos, porque presenta mayor coherencia con el tiempo final de la acción del botón.
-
-
-
-Nombre: Annie Molina Alarcón
+Finalmente, se aplicaron correctamente los principios de animación y las transformaciones en 3D, asegurando una experiencia visual coherente y dinámica.
